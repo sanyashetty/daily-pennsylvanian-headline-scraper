@@ -12,6 +12,8 @@ import bs4
 import requests
 import loguru
 
+import json
+
 SECTIONS = {
     "Opinion": "https://www.thedp.com/section/opinion",
     "Multimedia": "https://www.thedp.com/multimedia",
