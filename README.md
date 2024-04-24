@@ -10,6 +10,10 @@ Tools like GitHub Actions, GitLab CI and others make git scraping adaptable to d
 
 This template includes a sample workflow to demonstrate the core git scraping capabilities. Read on to learn how to customize it!
 
+## Changes Made for CIS350 Homework 2
+
+To change the scraper for this homework, I scraped the top headline from the "Opinion", "Multimedia", and "Podcast" sections of the Daily Pennsylvanian. To do this, I changed the scraper function to take in a "section" as an input, and then I altered the URL for the scraping based on which section was inputted. If the section was "Opinion" or "Podcast," then I looked for the "h3 standard-link" element in the DOM. If the section was "Multimedia," I looked for the "a medium-link" element in the DOM. Then, in the main method, I had a for loop that ran the scraper function for each of the section mentioned above, then put the results in a JSON object. I then serialized the JSON object and saved it to the data directory.
+
 ## Overview
 
 The workflow defined in `.github/workflows/scrape.yaml` runs on a defined schedule to:
@@ -37,7 +41,7 @@ The main libraries used are:
 - [`bs4`](https://www.crummy.com/software/BeautifulSoup/) - BeautifulSoup for parsing HTML
 - [`requests`](https://requests.readthedocs.io/en/latest/) - Making HTTP requests to scrape web pages
 - [`loguru`](https://github.com/Delgan/loguru) - Logging errors and run info
-- [`pytz`](https://github.com/stub42/pytz) - Handling datetimes and timezones  
+- [`pytz`](https://github.com/stub42/pytz) - Handling datetimes and timezones
 - [`waybackpy`](https://github.com/akamhy/waybackpy/) - Scraping web archives (optional)
 
 ## Getting Started
@@ -130,7 +134,7 @@ But it is important to use it responsibly and ethically. Here are some guideline
 
 7. Assess if decisions made using the data could contribute to bias, discrimination or unfair profiling.
 
-8. Validate quality of scraped data, and recognize limitations in ensuring relevance and accuracy inherent with web data.  
+8. Validate quality of scraped data, and recognize limitations in ensuring relevance and accuracy inherent with web data.
 
 9. Document your scraping process thoroughly for replicability, transparency and accountability.
 
